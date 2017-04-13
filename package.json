@@ -14,7 +14,7 @@
     "qunitjs": "^2.3.1"
   },
   "name": "qunit-eslint",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Run ESLint as QUnit tests.",
   "main": "index.js",
   "repository": "git@github.com:rwjblue/qunit-eslint.git",
