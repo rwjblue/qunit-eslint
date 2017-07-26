@@ -4,9 +4,10 @@ const path = require('path');
 const walkSync = require('walk-sync');
 const CLIEngine = require('eslint').CLIEngine;
 
-module.exports = function lint(paths) {
+module.exports = function lint(paths, _options) {
+  let options = _options || {};
   let eslintCLI = new CLIEngine({});
-  let baseDir = process.cwd(); // TODO: make this configuratable
+  let baseDir = _options.baseDir || process.cwd();
 
   let files = walkSync(baseDir, {
     globs: paths,
