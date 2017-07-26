@@ -5,7 +5,7 @@ const walkSync = require('walk-sync');
 const CLIEngine = require('eslint').CLIEngine;
 
 module.exports = function lint(paths, _options) {
-  tet options = _options || {};
+  let options = _options || {};
   let eslintCLI = new CLIEngine({});
   let baseDir = _options.baseDir || process.cwd();
 
