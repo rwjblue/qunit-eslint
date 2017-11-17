@@ -4,15 +4,13 @@
     "co": "^4.6.0",
     "execa": "^0.6.3",
     "fixturify": "^0.3.3",
-    "qunitjs": "^2.3.1"
+    "qunit": "^2.4.1"
   },
   "dependencies": {
     "eslint": "^3.19.0",
     "walk-sync": "^0.3.1"
   },
-  "peerDependencies": {
-    "qunitjs": "^2.3.1"
-  },
+  "peerDependencies": {},
   "name": "qunit-eslint",
   "version": "1.0.0",
   "description": "Run ESLint as QUnit tests.",
