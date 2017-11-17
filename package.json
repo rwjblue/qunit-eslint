@@ -2,12 +2,12 @@
   "devDependencies": {
     "broccoli-test-helper": "^1.1.0",
     "co": "^4.6.0",
-    "execa": "^0.6.3",
+    "execa": "^0.8.0",
     "fixturify": "^0.3.3",
     "qunit": "^2.4.1"
   },
   "dependencies": {
-    "eslint": "^3.19.0",
+    "eslint": "^4.11.0",
     "walk-sync": "^0.3.1"
   },
   "peerDependencies": {},
