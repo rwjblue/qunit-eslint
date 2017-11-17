@@ -30,13 +30,15 @@ describe('qunit-eslint', function(hooks) {
   }));
 
   hooks.afterEach(co.wrap(function* () {
-    yield input.dispose();
     process.chdir(rootWorkingDirectory);
+
+    yield input.dispose();
+
     // remove symlink to project root
     fs.unlinkSync(`${rootWorkingDirectory}/node_modules/qunit-eslint`);
   }));
 
-  it('should run linting', co.wrap(function* (assert) {
+  it('should run linting', function(assert) {
     input.write({
       ".eslintrc": DEFAULT_ESLINT_CONFIG,
       "lib": {
@@ -47,14 +49,12 @@ describe('qunit-eslint', function(hooks) {
       }
     });
 
-    try {
-      debugger
-      yield execa('qunit', [`tests/lint-test.js`]);
-    } catch(error) {
-      assert.pushResult({
-        result: error.stdout.includes('no-extra-semi'),
-        actual: error.stdout
+    return execa('qunit', [`tests/lint-test.js`])
+      .then(null, (result) => {
+        assert.pushResult({
+          result: result.stdout.includes('no-extra-semi'),
+          actual: result.stdout
+        });
       });
-    }
-  }));
+  });
 });

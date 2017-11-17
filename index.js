@@ -7,7 +7,7 @@ const CLIEngine = require('eslint').CLIEngine;
 module.exports = function lint(paths, _options) {
   let options = _options || {};
   let eslintCLI = new CLIEngine({});
-  let baseDir = _options.baseDir || process.cwd();
+  let baseDir = options.baseDir || process.cwd();
 
   let files = walkSync(baseDir, {
     globs: paths,
